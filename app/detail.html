@@ -6,16 +6,16 @@
     Required {{myForm.name.$pristine}}</span>
     </div>
      
-    <div class="control-group" ng-class="{error: myForm.site.$invalid && !myForm.site.$pristine}">
-    <label>Website</label>
-    <input type="url" name="site" ng-model="project.site" required>
-    <span ng-show="myForm.site.$error.required && !myForm.name.$pristine" class="help-inline">
+    <div class="control-group" ng-class="{error: myForm.contact.$invalid && !myForm.contact.$pristine}">
+    <label>Email</label>
+    <input type="email" name="email" ng-model="project.email" required>
+    <span ng-show="myForm.contact.$error.required && !myForm.name.$pristine" class="help-inline">
     Required</span>
-    <span ng-show="myForm.site.$error.url" class="help-inline">
+    <span ng-show="myForm.contact.$error.url" class="help-inline">
     Not a URL</span>
     </div>
      
-    <label>Description</label>
+    <label>word</label>
     <textarea name="description" ng-model="project.description"></textarea>
      
     <br>

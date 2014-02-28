@@ -1,19 +1,37 @@
-    <input type="text" ng-model="search" class="search-query" placeholder="Search">
-    <table>
-    <thead>
-    <tr>
-    <th>Project</th>
-    <th>Description</th>
-    <th><a href="#/new"><i class="icon-plus-sign"></i>A</a></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="project in projects | orderByPriority | filter:search | orderBy:'name'">
-    <td><a href="{{project.site}}" target="_blank">{{project.name}}</a></td>
-    <td>{{project.description}}</td>
-    <td>
-    <a href="#/edit/{{project.$id}}"><i class="icon-pencil">E</i></a>
-    </td>
-    </tr>
-    </tbody>
-    </table>
+    <div style="display:block">
+    <a href="#/new"><i class="icon-plus-sign"></i>签署</a>
+    </div>
+
+    <div style="display:inline-block">
+    <div ng-repeat="project in projects | modulo:5:1" style="display:block">
+    <a href="mailto:{{project.email}}" title="{{project.description}}" target="_blank">{{project.name}}</a>    
+    </div>
+    </div>
+
+    <div style="display:inline-block">
+    
+    <div ng-repeat="project in projects | modulo:5:2" style="display:block">
+    <a href="mailto:{{project.email}}" title="{{project.description}}" target="_blank">{{project.name}}</a>
+    </div>
+    </div>
+
+    <div style="display:inline-block">
+    
+    <div ng-repeat="project in projects| modulo:5:3"  style="display:block">
+    <a href="mailto:{{project.email}}" title="{{project.description}}" target="_blank">{{project.name}}</a>
+    </div>
+    </div>
+
+    <div style="display:inline-block">
+    
+    <div ng-repeat="project in projects | modulo:5:4"  style="display:block">
+    <a href="mailto:{{project.email}}" title="{{project.description}}" target="_blank">{{project.name}}</a>    
+    </div>
+    </div>
+
+    <div style="display:inline-block">
+    
+    <div ng-repeat="project in projects | modulo:5:0" style="display:block">
+    <a href="mailto:{{project.email}}" title="{{project.description}}" target="_blank">{{project.name}}</a>
+    </div>
+    

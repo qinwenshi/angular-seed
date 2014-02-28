@@ -26,7 +26,15 @@
     })
      
     .controller('ListCtrl', function($scope, Projects) {
+
     $scope.projects = Projects;
+    })
+    .filter('modulo', function(){
+    return function (arr, num, val) {
+      return arr.filter(function(item, index){
+          return index % num === (val || 0);
+      })
+    };
     })
      
     .controller('CreateCtrl', function($scope, $location, $timeout, Projects) {
