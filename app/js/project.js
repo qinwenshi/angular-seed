@@ -30,10 +30,17 @@
     $scope.projects = Projects;
     })
     .filter('modulo', function(){
-    return function (arr, num, val) {
-      return arr.filter(function(item, index){
-          return index % num === (val || 0);
-      })
+    return function (input, num, val) {
+      var moduloed = [];
+      var index = input.$getIndex();
+      if(index.length > 0) {
+        for(var i = 0; i < index.length; i++){
+            var obj = input[index[i]];
+            if( i % num === (val || 0))
+                moduloed.push(obj);
+        }
+      }
+      return moduloed;
     };
     })
      
